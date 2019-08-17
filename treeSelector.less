@@ -1,0 +1,47 @@
+@import "./iconfont/iconfont.css";
+.tree-selector{
+	height: auto;
+	width: auto;
+	.row{
+		min-width: 100px;
+		// height: 30px; js
+		// line-height: 30px; js
+		display: flex;
+		flex-flow: row nowrap;
+		margin-top: 4px;
+		cursor: pointer;
+		.icon{
+			// width: 30px; js
+			// height: 30px; js
+			// line-height: 30px; js
+			text-align: center;
+			color: #333;
+			transform: rotate(0deg);
+			// background: red;
+		}
+		.icon-open{
+			transform: rotate(90deg);
+		}
+		.check-box{
+			// width: 25px; js
+			// height: 25px; js
+			margin: 2.5px;
+			// background: green;
+			border-radius: 4px;
+			border: 1px solid #dcdfe6;
+			box-sizing: border-box;
+			transition: border .5s;
+			font-size: 14px;
+			// line-height: 25px; js
+			text-align: center;
+			color: #fff;
+			&:hover{
+				border: 1px solid #409efe;
+			}
+		}
+		.text{
+			flex-grow: 1;
+			// padding-left: 16px; js
+		}
+	}
+}
