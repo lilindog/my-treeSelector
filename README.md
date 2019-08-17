@@ -1,6 +1,6 @@
 # vue树形选择器组件
 
-[在线示例](http://lilin.site/demo/demo-treeSelector)
+<a href="http://lilin.site/demo/demo-treeSelector" target="_blank">在线示例</a>
 
 看见element-ui里的树形组件，想用自己的思路强撸一个。熬了2天；完成后在发现element-ui的树形是视图节点递归实现，我的视图是线性的，是在逻辑层面使用了递归算法来实现。
 
