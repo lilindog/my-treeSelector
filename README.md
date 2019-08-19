@@ -2,7 +2,7 @@
 
 <a href="http://lilin.site/demo/demo-treeSelector" target="_blank">在线示例</a>
 
-看见element-ui里的树形组件，想用自己的思路强撸一个。熬了2天；完成后在发现element-ui的树形是视图节点递归实现，我的视图是线性的，是在逻辑层面使用了递归算法来实现。
+偶然需要用到element-ui里的树形组件，想用自己的思路强撸一个。熬了2天；完成后去看element-ui树形源码发现element-ui的树形是组件递归来实现，而该组件视图是线性渲染，在逻辑层面使用了递归算法来实现。
 
 #### 属性
 |属性|参数类型|备注|
