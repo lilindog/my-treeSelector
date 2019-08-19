@@ -129,27 +129,57 @@ export default {
 				node.$unfold = false;
 				tools.test()(this.shadows, node, false);
 			}
-			this.list.push(null);
+			this.updateView();
 		},
 
 		/**
 		 * @description 选中、取消选中 
 		 */
 		select (value, state) {
-			// console.log(value, state);
 			if (state) {
 				tools.unSelect(this.shadows, value);
 			} else {
 				tools.select(this.shadows, value);
 			}
-			this.list.push(null);
-			this.getValues();
+			this.updateView();
+			this.triggerChange();
 		},
 
-		getValues() {
+		/**
+		 * @description 发送change实事件
+		 */
+		triggerChange() {
 			let values = tools.getSelectedValues(this.shadows);
 			this.$emit("change", values);
-		}
+		},
 
+		/**
+		 * @desccription 全选 
+		 */
+		allSelected () {
+			this.shadows.forEach(item => {
+				item.$selected = 2;
+			});
+			this.updateView();
+			this.triggerChange();
+		},
+
+		/**
+		 * @desccription 取消全选 
+		 */
+		unAllSelected () {
+			this.shadows.forEach(item => {
+				item.$selected = 0;
+			});
+			this.updateView();
+			this.triggerChange();
+		},
+
+		//更新视图
+		updateView () {
+			let _ = this.list;
+			this.list = [];
+			this.list = _;
+		}
 	}
 }

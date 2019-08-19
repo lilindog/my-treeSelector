@@ -10,8 +10,15 @@
 |source|Array|数据库返回的无限极分类数据
 |selected|Array|默认选中的数据id集合，如[1,2,3,4]|
 |size|String|ui尺寸;可选：mini,small,big|
+|unfoldSelected|Boolean|是否展开默认选中项|
 
 #### 事件
 |事件名|携带参数类型|备注|
 |-|-|-|
 |change|Array|选择/取消选择时候触发，携带数据为当前所有选中节点的id集合；如[1,2,3,4]|
+
+#### 方法
+|方法名|参数|备注|
+|-|-|-|
+|allSelected|-|全选所有节点|
+|unAllSelected|-|取消全部已经选择的勾选|
