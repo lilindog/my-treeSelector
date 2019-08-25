@@ -22,3 +22,5 @@
 |-|-|-|
 |allSelected|-|全选所有节点|
 |unAllSelected|-|取消全部已经选择的勾选|
+|unfoldAll|-|展开所有|
+|foldAll|-|收起所有|
