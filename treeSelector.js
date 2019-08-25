@@ -153,8 +153,19 @@ export default {
 			this.$emit("change", values);
 		},
 
+		//更新视图
+		updateView () {
+			let _ = this.list;
+			this.list = [];
+			this.list = _;
+		},
+
 		/**
-		 * @desccription 全选 
+		 * 以下是向外提供的组件方法 ========================================================================================> 
+		 */
+
+		/**
+		 * @desccription 全选所有
 		 */
 		allSelected () {
 			this.shadows.forEach(item => {
@@ -165,7 +176,7 @@ export default {
 		},
 
 		/**
-		 * @desccription 取消全选 
+		 * @desccription 取消所有已选择
 		 */
 		unAllSelected () {
 			this.shadows.forEach(item => {
@@ -175,11 +186,26 @@ export default {
 			this.triggerChange();
 		},
 
-		//更新视图
-		updateView () {
-			let _ = this.list;
-			this.list = [];
-			this.list = _;
+		/**
+		 * @description 展开所有
+		 */
+		unfoldAll () {
+			this.shadows.forEach(item => {
+				item.$display = true;
+				item.$unfold !== undefined && (item.$unfold = true);
+			});
+			this.updateView();
+		},
+
+		/**
+		 * @description 收起所有展开节
+		 */
+		foldAll () {
+			this.shadows.forEach(item => {
+				item.$deep !== 0 && (item.$display = false);
+				item.$unfold !== undefined && (item.$unfold = false);
+			});
+			this.updateView();
 		}
 	}
 }
